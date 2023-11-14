@@ -1,0 +1,272 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@500&family=Ubuntu:wght@300&display=swap');
+
+
+*{
+    font-family: 'Ubuntu', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    scroll-behavior: smooth;
+    scroll-padding: 2rem;
+}
+
+.contendor{
+    max-width: 1068px;
+    margin: auto;
+    width: 100%;
+}
+
+section{
+    padding: 4rem 0 3rem;
+
+}
+
+body{
+    color: black;
+    background-color: orange;
+
+}
+
+img{
+    width: 100%;
+}
+
+
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: black;
+    box-shadow: 0 1px 4px hsl(0 4% 15% / 10%);
+    color: orange;
+    z-index: 100;
+}
+
+.nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0;
+}
+
+.logo{
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: orange;
+    text-transform: uppercase;
+}
+
+#carrito-imagen{
+    font-size: 1.8rem;
+    cursor: pointer;
+    margin: 1rem;
+}
+
+.carrito-imagen{
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    padding: 10px;
+}
+
+.detail.box{
+    display: grid;
+    row-gap: .5rem;
+}
+
+.carrito-producto-titulo{
+    font-size: 1rem;
+    text-transform: uppercase;
+}
+
+.precio-carrito{
+    font-weight: 500;
+}
+
+
+
+.carrito-cantidad{
+    border: 1px solid orange;
+    outline: black;
+    width: 1.4rem;
+    text-align: center;
+    font-size: 1rem;
+}
+
+.carrito-remove{
+    font-size: 24px;
+    color: orange;
+    cursor: pointer;
+}
+
+.total{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 1.5rem;
+    border-top: 1px solid black;
+}
+
+.titulo-total{
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.precio.total{
+    margin-left: .5rem;
+}
+
+.boton-comprar{
+    display: flex;
+    margin: 1.5rem auto 0 auto;
+    padding: 12px 20px;
+    border: none;
+    background-color: orangered;
+    color: black;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.boton-vaciar{
+    display: flex;
+    margin: 1.5rem auto 0 auto;
+    padding: 12px 20px;
+    border: none;
+    background-color: orangered;
+    color: black;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.boton-comprar:hover{
+    background-color: orangered;
+    color: orange;
+}
+
+.boton-vaciar:hover{
+    background-color: orangered;
+    color: orange;
+}
+
+#cerrar-carrito{
+    position: absolute;
+    top: 1rem;
+    right: .8rem;
+    font-size: 2rem;
+    color: orange;
+    cursor: pointer;
+}
+
+
+.carrito{
+    position: fixed;
+    top: 0;
+    right: 0;
+    right: -100%;
+    width: 360px;
+    height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 20px;
+    background-color: black;
+    color: #ffa500;
+    box-shadow: -2px solid 4px hsl(0 4% 15% / 10%);
+    border: 1px solid;
+    transition: 1.7s;
+
+}
+
+.carrito.active{
+    right: 0;
+    transition: .5s;
+}
+
+.titulo-carrito{
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-top: 2rem;
+}
+
+.carrito-box {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 1rem;
+    background-color: white;
+    padding: 10px;
+}
+
+.carrito-imagen-pequena {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    margin-right: 10px;
+}
+
+
+.productos{
+    margin: 2rem;
+}
+
+.titulo{
+    font-style: 1.5rem;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.producto{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, auto));
+    gap: 1.5rem;
+}
+
+.carta{
+    position: relative;
+    transition: .5s ease-in-out;
+}
+
+.carta:hover{
+    padding: 10px;
+}
+
+.carta img{
+    width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    margin-bottom: .5rem;
+}
+
+.titulo-producto{
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: .5rem;
+}
+
+.producto-precio{
+    font-weight: 500;
+
+}
+
+.agregar{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: black;
+    color: orange;
+    padding: 11px;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.agregar:hover{
+    background-color: orangered;
+}
+

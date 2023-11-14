@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Santech</title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"> 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+    <header>
+        <div class="contenedor nav">
+            <a href="#" class="logo">Santech</a>
+
+            <i id="carrito-imagen" class="bi bi-basket-fill"></i>
+
+            <div class="carrito">
+                <h2 class="titulo-carrito">Tu compra</h2>
+                <div id="contenedor-carrito" class="contendor-carrito">
+                </div>
+                <div class="total">
+                    <div class="titulo-total">Total</div>
+                    <div class="precio-total">$</div>
+                    <button type="button" id="boton-comprar" class="boton-comprar">Comprar</button>
+                    <button type="button" id="boton-vaciar" class="boton-vaciar">Vaciar</button>
+                    <i id="cerrar-carrito" class="bi bi-x-circle-fill"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="contenedor productos">
+            <h2 class="titulo">Nuestors productos</h2>
+
+            <div class="producto">
+                <div class="carta">
+                    <img src="./imagenes/cooler loquido.jpg" alt="cooler">
+                    <h2 class="titulo-producto">Cooler liquido</h2>
+                    <span class="producto-precio">$ 80</span>
+                    <i class="bi bi-bag-plus agregar"></i>
+                </div>
+
+                <div class="carta">
+                    <img src="./imagenes/core i9.jpg" alt="core i9">
+                    <h2 class="titulo-producto">Intel Core I9</h2>
+                    <span class="producto-precio">$ 550</span>
+                    <i class="bi bi-bag-plus agregar"></i>
+                </div>
+
+                <div class="carta">
+                    <img src="./imagenes/fuente.jpg" alt="fuente">
+                    <h2 class="titulo-producto">Fuente P550B</h2>
+                    <span class="producto-precio">$ 100</span>
+                    <i class="bi bi-bag-plus agregar"></i>
+                </div>
+
+                <div class="carta">
+                    <img src="./imagenes/gabinete2.jpg" alt="gabinete">
+                    <h2 class="titulo-producto">Gabinete con Fan´s</h2>
+                    <span class="producto-precio">$ 70</span>
+                    <i class="bi bi-bag-plus agregar"></i>
+                </div>
+
+                <div class="carta">
+                    <img src="./imagenes/gpu.jpg" alt="grafica">
+                    <h2 class="titulo-producto">Grafica RTX 3070</h2>
+                    <span class="producto-precio">$ 400</span>
+                    <i class="bi bi-bag-plus agregar"></i>
+                </div>
+
+                <div class="carta">
+                    <img src="./imagenes/pc1.jpg" alt="PC1">
+                    <h2 class="titulo-producto">PC Intel core I9</h2>
+                    <span class="producto-precio">$ 1200</span>
+                    <i class="bi bi-bag-plus agregar"></i>
+                </div>
+
+                <div class="carta">
+                    <img src="./imagenes/pc2.jpg" alt="PC2">
+                    <h2 class="titulo-producto">PC AMD Ryzen 9 </h2>
+                    <span class="producto-precio">$ 1100</span>
+                    <i class="bi bi-bag-plus agregar"></i>
+                </div>
+
+                <div class="carta">
+                    <img src="./imagenes/pc3.jpg" alt="PC3">
+                    <h2 class="titulo-producto">PC Intel core I7</h2>
+                    <span class="producto-precio">$ 1100</span>
+                    <i class="bi bi-bag-plus agregar"></i>
+                </div>
+
+                <div class="carta">
+                    <img src="./imagenes/placag.jpg" alt="placa">
+                    <h2 class="titulo-producto">Placa H410M</h2>
+                    <span class="producto-precio">$ 100</span>
+                    <i class="bi bi-bag-plus agregar"></i>
+                </div>
+
+                <div class="carta">
+                    <img src="./imagenes/ram.jpg" alt="ram">
+                    <h2 class="titulo-producto">RAM Kingston</h2>
+                    <span class="producto-precio">$ 45</span>
+                    <i class="bi bi-bag-plus agregar"></i>
+                </div>
+
+                <div class="carta">
+                    <img src="./imagenes/solido.jpg" alt="ssd">
+                    <h2 class="titulo-producto">Disco solido 1TB</h2>
+                    <span class="producto-precio">$ 90</span>
+                    <i class="bi bi-bag-plus agregar"></i>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="./main.js"></script>
+</body>
+</html>
+
