@@ -262,17 +262,28 @@ function crearElementoCarrito(producto) {
     return elementoProducto;
 }
 
-/*      Recupera los objetos al recargar la pagina     */
-
 function cargarCarritoDesdeLocalStorage() {
     if (localStorage.getItem('carritoProductos')) {
         carritoProductos = JSON.parse(localStorage.getItem('carritoProductos'));
     }
 }
 
+/*       Cotizacion crypto        */
 
+let endpoint = 'https://api.binance.com/api/v3/ticker/price';
 
+fetch(endpoint)
+    .then(response => response.json())
+    .then(data => mostrarData(data))    .catch(e => console.log(e));
 
+const mostrarData = (data) => {
+
+    const objetosDeseados = data.filter((element, index) => index === 11 || index === 12);
+
+    const contenidoHTML = objetosDeseados.map(objeto => `<p>${objeto.symbol}: ${parseFloat(objeto.price).toFixed(2)}</p>`).join('');
+
+    document.getElementById('cotizaciones').innerHTML = contenidoHTML;
+};
 
 
 
