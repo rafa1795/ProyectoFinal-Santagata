@@ -161,20 +161,6 @@ function inicio() {
 
 /*    Agregar productos al carrito     */
 
-function cargarCarritoDesdeLocalStorage() {
-    if (localStorage.getItem('carritoProductos')) {
-        carritoProductos = JSON.parse(localStorage.getItem('carritoProductos'));
-    }
-}
-
-if (localStorage.getItem('carritoProductos')) {
-    carritoProductos = JSON.parse(localStorage.getItem('carritoProductos'));
-}
-
-if (localStorage.getItem('precioTotal')) {
-    precioTotal = parseFloat(localStorage.getItem('precioTotal'));
-}
-
 function agregarEvento() {
     const botonesAgregar = document.querySelectorAll(".agregar");
     botonesAgregar.forEach((boton, index) => {
@@ -262,10 +248,11 @@ function crearElementoCarrito(producto) {
     return elementoProducto;
 }
 
+/*     Recupera los productos al recargar       */
+
 function cargarCarritoDesdeLocalStorage() {
-    if (localStorage.getItem('carritoProductos')) {
-        carritoProductos = JSON.parse(localStorage.getItem('carritoProductos'));
-    }
+    carritoProductos = JSON.parse(localStorage.getItem('carritoProductos')) || [];
+    precioTotal = parseFloat(localStorage.getItem('precioTotal')) || 0;
 }
 
 /*       Cotizacion crypto        */
@@ -274,7 +261,7 @@ let endpoint = 'https://api.binance.com/api/v3/ticker/price';
 
 fetch(endpoint)
     .then(response => response.json())
-    .then(data => mostrarData(data))    .catch(e => console.log(e));
+    .then(data => mostrarData(data))
 
 const mostrarData = (data) => {
 
@@ -282,7 +269,9 @@ const mostrarData = (data) => {
 
     const contenidoHTML = objetosDeseados.map(objeto => `<p>${objeto.symbol}: ${parseFloat(objeto.price).toFixed(2)}</p>`).join('');
 
-    document.getElementById('cotizaciones').innerHTML = contenidoHTML;
+    const cotizacionesDiv = document.getElementById('cotizaciones');
+
+    cotizacionesDiv.innerHTML = '<h4>Cotizaciones:</h4> <br/>' + contenidoHTML;
 };
 
 
