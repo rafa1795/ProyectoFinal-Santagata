@@ -188,8 +188,6 @@ function agregarAlCarrito(index) {
     localStorage.setItem('precioTotal', precioTotal.toFixed(2));
     localStorage.setItem('carritoProductos', JSON.stringify(carritoProductos));
 
-        console.log("Carrito:", carritoProductos);
-        console.log("Precio total después de agregar:", precioTotal);
 
         actualizarCarrito();
     } else {
