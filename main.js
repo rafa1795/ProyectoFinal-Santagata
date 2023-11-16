@@ -253,7 +253,7 @@ const mostrarData = (data) => {
 
     const objetosDeseados = data.filter((element, index) => index === 11 || index === 12);
 
-    const contenidoHTML = objetosDeseados.map(objeto => `<p>${objeto.symbol}: ${parseFloat(objeto.price).toFixed(2)}</p>`).join('');
+    const contenidoHTML = objetosDeseados.map(objeto => `<p>${objeto.symbol}: $ ${parseFloat(objeto.price).toFixed(2)}</p>`).join('');
 
     cotizaciones.innerHTML = '<h4>Cotizaciones:</h4> <br/>' + contenidoHTML;
 };
