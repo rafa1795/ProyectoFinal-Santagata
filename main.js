@@ -76,17 +76,7 @@ const productos = [
 let carritoProductos = [];
 
 
-
 let precioTotal = 0;
-
-if (localStorage.getItem('carritoProductos')) {
-    carritoProductos = JSON.parse(localStorage.getItem('carritoProductos'));
-}
-
-if (localStorage.getItem('precioTotal')) {
-    precioTotal = parseFloat(localStorage.getItem('precioTotal')) || 0;
-}
-
 
 
 const iconoCarrito = document.querySelector("#carrito-imagen");
@@ -94,10 +84,10 @@ const carrito = document.querySelector(".carrito");
 const cerrarCarrito = document.querySelector("#cerrar-carrito");
 const botonComprar = document.querySelector(".boton-comprar");
 const botonVaciar = document.querySelector(".boton-vaciar");
+const botonesAgregar = document.querySelectorAll(".agregar");
+const precioTotalElemento = document.querySelector('.precio-total');
 const contenedorCarrito = document.getElementById('contenedor-carrito');
-if (contenedorCarrito) {
-    contenedorCarrito.innerHTML = '';
-}
+const cotizaciones = document.getElementById('cotizaciones');
 
 
 
@@ -119,7 +109,7 @@ botonComprar.addEventListener("click", () => {
             icon: "error",
             iconColor: "#ffa500",
             title: "No hay articulos",
-            text: "Debes agregar algun producto!",
+            text: "Debes agregar productos a tu carrito!",
         });
     } else Swal.fire({
         title: "Compra exitosa!",
@@ -162,7 +152,6 @@ function inicio() {
 /*    Agregar productos al carrito     */
 
 function agregarEvento() {
-    const botonesAgregar = document.querySelectorAll(".agregar");
     botonesAgregar.forEach((boton, index) => {
         boton.addEventListener('click', () => {
             agregarAlCarrito(index);
@@ -184,6 +173,7 @@ function agregarAlCarrito(index) {
             nombre: productos[index].nombre,
             precio: productos[index].precio,
             cantidad: 1,
+            imagen: productos[index].imagen,
         };
 
         const productoExistente = carritoProductos.find((producto) => producto.id === productoSeleccionado.id);
@@ -208,8 +198,6 @@ function agregarAlCarrito(index) {
 }
 
 function actualizarCarrito() {
-    const contenedorCarrito = document.getElementById('contenedor-carrito');
-    const precioTotalElemento = document.querySelector('.precio-total');
 
     let precioTotal = 0;
 
@@ -241,14 +229,12 @@ function crearElementoCarrito(producto) {
     <div class="carrito-cantidad">${producto.cantidad}</div>
     <div class="precio-carrito">$${(producto.precio * producto.cantidad).toFixed(2)}</div>
 `;
-
-    const contenedorCarrito = document.getElementById('contenedor-carrito');
     contenedorCarrito.appendChild(elementoProducto);
 
     return elementoProducto;
 }
 
-/*     Recupera los productos al recargar       */
+/*     Recupera el carrito al recargar       */
 
 function cargarCarritoDesdeLocalStorage() {
     carritoProductos = JSON.parse(localStorage.getItem('carritoProductos')) || [];
@@ -260,8 +246,8 @@ function cargarCarritoDesdeLocalStorage() {
 let endpoint = 'https://api.binance.com/api/v3/ticker/price';
 
 fetch(endpoint)
-    .then(response => response.json())
-    .then(data => mostrarData(data))
+.then(response => response.json())
+.then(data => mostrarData(data))
 
 const mostrarData = (data) => {
 
@@ -269,9 +255,7 @@ const mostrarData = (data) => {
 
     const contenidoHTML = objetosDeseados.map(objeto => `<p>${objeto.symbol}: ${parseFloat(objeto.price).toFixed(2)}</p>`).join('');
 
-    const cotizacionesDiv = document.getElementById('cotizaciones');
-
-    cotizacionesDiv.innerHTML = '<h4>Cotizaciones:</h4> <br/>' + contenidoHTML;
+    cotizaciones.innerHTML = '<h4>Cotizaciones:</h4> <br/>' + contenidoHTML;
 };
 
 
