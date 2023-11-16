@@ -91,7 +91,7 @@ const cotizaciones = document.getElementById('cotizaciones');
 
 
 
-/*     Abrir y cerrar carrito*/
+/*     Abrir y cerrar carrito     */
 
 iconoCarrito.addEventListener("click", () => {
     carrito.classList.add("active");
@@ -188,11 +188,8 @@ function agregarAlCarrito(index) {
     localStorage.setItem('precioTotal', precioTotal.toFixed(2));
     localStorage.setItem('carritoProductos', JSON.stringify(carritoProductos));
 
-
         actualizarCarrito();
-    } else {
-        console.error(`El índice ${index} no corresponde a ningún producto.`);
-    }
+    } 
 }
 
 function actualizarCarrito() {
@@ -251,7 +248,7 @@ const mostrarData = (data) => {
 
     const objetosDeseados = data.filter((element, index) => index === 11 || index === 12);
 
-    const contenidoHTML = objetosDeseados.map(objeto => `<p>${objeto.symbol}: $ ${parseFloat(objeto.price).toFixed(2)}</p>`).join('');
+    const contenidoHTML = objetosDeseados.map(objeto => `<p>${objeto.symbol}: $D ${parseFloat(objeto.price).toFixed(2)}</p>`).join('');
 
     cotizaciones.innerHTML = '<h4>Cotizaciones:</h4> <br/>' + contenidoHTML;
 };
